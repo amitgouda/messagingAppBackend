@@ -6,5 +6,7 @@ module.exports = {
   port: process.env.PORT,
   JWT_KEY : process.env.JWT_KEY,
   JWT_ALGORITHM: process.env.JWT_ALGORITHM, 
-  DATABASE:process.env.DATABASE
+  DATABASE:process.env.DATABASE,
+  Email_User:process.env.Email_User,
+  Email_Password: process.env.Email_Password
 };

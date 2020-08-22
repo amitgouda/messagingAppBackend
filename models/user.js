@@ -24,6 +24,7 @@ const userSchema = new mongoose.Schema(
       unique: true,
       sparse: true,
       index: true,
+      required: true
     },
     isEmailVerified: {
       type: Boolean,
@@ -33,24 +34,21 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    phoneNumber: {
-      type: String,
-      required: false,
-      unique: true,
-      maxlength: 10,
-      minlength: 10,
-      sparse: true,
-      index: true,
-    },
     role: {
       type: Number,
       default: 0,
       enum: [0, 1, 2],
     },
-    isPhoneVerified: {
-      type: Boolean,
-      default: false,
+    otp:{
+      type: String,
+      required: true,
+      maxlength: 4,
+      minlength: 4,
     },
+    otpCreatedOn:{
+      type: String,
+      required: true,
+    }
   },
   {
     timestamps: true,

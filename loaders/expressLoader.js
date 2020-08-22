@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
 const controllers = require('../controllers');
-
+const {sendMail} = require('../utils/mail')
 const expressLoader = async (app) => {
   app.get('/status', (req, res) => {
     res.status(200).end();
@@ -21,7 +21,7 @@ const expressLoader = async (app) => {
   // ...More middlewares
   app.use(morgan('dev'));
   app.use('/api', controllers);
-
+  
   // Return the express app
   return app;
 };
